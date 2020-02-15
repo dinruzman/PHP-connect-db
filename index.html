@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js">
+</script>
+<script>
+
+
+
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#paragraph").hide(200, function(){
+        alert("test");
+    });
+  });
+  $("#show").click(function(){
+    $("#paragraph").show(2000).hide(2000);
+  });
+  $("#toggle").click(function(){
+    $("#paragraph").toggle(200);
+  });
+  $("#fadein").click(function(){
+    $("#div1").fadeIn(1000);
+    $("#div2").fadeIn(2000);
+    $("#div3").fadeIn(3000);
+  });
+  $("#btn1").click(function(){
+    alert("TEXT: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
+  $("#valtest").click(function(){
+    alert("Value: " + $("#testzz").val());
+  });
+
+  $("#showtime").click(function(){
+    $("#paragraph").show(function(){
+        var dt = new Date();
+        var month = ("0" + (dt.getMonth() + 1)); 
+        var time = month + ":" + dt.getDate() + ":" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        var password =  month + dt.getHours() + dt.getDate();
+        alert(password);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p id="paragraph">This is a paragraph.</p>
+
+<p>This is fadein.</p>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+<button id="fadein">fadein</button>
+<button id="toggle">toggle</button>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<h2>-------------------------------------------------------------</h2>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+<p>Name: <input type="text" id="testzz" value="Mickey Mouse"></p>
+<button id="valtest">Show Value</button>
+
+<button id="showtime">Show Time</button>
+
+</body>
+</html>
